@@ -361,7 +361,7 @@ class SectionDatasource extends Datasource
         }
 
         foreach ($this->dsParamFILTERS as $field_id => $filter) {
-            if ((is_array($filter) && empty($filter)) || trim($filter) == '') {
+            if ((is_array($filter) && empty($filter)) || is_string($filter) && trim($filter) == '') {
                 continue;
             }
 
