@@ -598,8 +598,10 @@ class XMLElement implements IteratorAggregate
         if (!isset($this->_children[$index])) {
             return false;
         }
-
+        
         unset($this->_children[$index]);
+
+        $this->_children = array_values($this->_children);
 
         return true;
     }
